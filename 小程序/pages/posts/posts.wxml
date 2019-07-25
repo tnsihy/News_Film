@@ -1,0 +1,34 @@
+<!-- 引入模板 末尾需要斜杠-->
+<import src="post-item/post-item-template.wxml" />
+
+<view>
+  <!-- 
+    vertical="true"时轮播为竖向轮播
+    当需要修改为横向轮播时
+    可以删掉这段代码或者写成vertical="{{false}}" 
+      因为vertical="false"的话"false"看为整体是一个字符串，解析为true
+  -->
+  <swiper indicator-dots="true" indicator-color="#fff" indicator-active-color="#b3d4db" autoplay="true" interval="5000">
+    <swiper-item>
+      <!-- src绝对路径 -->
+      <image src="/images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/iqiyi.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/wx.png"></image>
+    </swiper-item>
+  </swiper>
+
+<!-- 要使多个新闻通过wx:for循环出来 需要用<block></block>包裹元素 -->
+<block wx:for="{{post_key}}" wx:for-item="item" wx:for-index="index" wx:key="key">
+  <!-- 可以获取是第几个新闻 <text>{{index}}</text> index是一个默认值 -->
+  
+  <!-- 自定义属性：以data为前缀 例如data-postId -->
+  <view catch:tap="onPostTap" data-postId="{{item.postId}}">
+    <!-- 使用template ...item将每一项内容平铺开 然后可以不使用item.***的形式而直接使用*** -->
+    <template is="postItem" data="{{...item}}"></template>
+  </view>
+</block>
+</view>

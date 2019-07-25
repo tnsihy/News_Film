@@ -1,0 +1,29 @@
+<!-- 
+template模板 有名字 
+template下最好使用绝对路径  因为不止一个文件会引用它 然后不同文件可能不同层级
+-->
+<template name="postItem">
+  <!-- 头像与日期 -->
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="{{avatar}}"></image>
+      <!-- 
+        条件渲染wx:if="{{text_condition}}" 然后在data数据中定义text_condition
+      -->
+      <text class="post-date">{{date}}</text>
+    </view>
+
+    <!-- 标题 图片与内容 -->
+    <text class="post-title">{{title}}</text>
+    <image class="post-image" src="{{imgSrc}}"></image>
+    <text class="post-content">{{content}}</text>
+
+    <view class="post-like">
+      <!-- 收藏与观看   src相对路径 -->
+      <image class="post-like-image" src="/images/icon/chat.png"></image>
+      <text class="post-like-font">{{collection}}</text>
+      <image class="post-like-image" src="/images/icon/view.png"></image>
+      <text class="post-like-font">{{reading}}</text>
+    </view>
+  </view>
+</template>

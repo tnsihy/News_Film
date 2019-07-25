@@ -1,0 +1,32 @@
+<!-- 
+  新闻详情页面
+  先静后动:先处理样式再数据
+-->
+<view class="container">
+  <image class="head-image" src="{{isPlayingMusic?postData.music.coverImg:postData.headImgSrc}}"></image>
+  <!-- 音乐播放器 -->
+  <!-- 图片切换方法2 通过数据绑定 -->
+  <image catch:tap="onMusicTap" class="audio" src="{{isPlayingMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}"></image>
+
+  <view class="author-date">
+    <image class="avatar" src="{{postData.avatar}}"></image>
+    <text class="author">{{postData.author}}</text>
+    <text class="const-text">发表于</text>
+    <text class="date">{{postData.dateTime}}</text>
+  </view>
+
+  <text class="title">{{postData.title}}</text>
+  <view class="tool">
+    <!-- 收藏与分享 -->
+    <view class="circle-img">
+      <!-- 图片切换方法1 通过wx:if wx:else -->
+      <image wx:if="{{collected}}" catch:tap="onCollectionTap" src="/images/icon/collection.png"></image>
+      <image wx:else catch:tap="onCollectionTap" src="/images/icon/collection-anti.png"></image>
+      <image catch:tap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
+    </view>
+    <!-- 直线 -->
+    <view class="horizon"></view>
+  </view>
+  <!-- 新闻内容详情 -->
+  <text class="detail">{{postData.detail}}</text>
+</view>

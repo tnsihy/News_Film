@@ -1,0 +1,12 @@
+<view class="container">
+  <image class="user-avatar" src="/images/avatar/2.png"></image>
+  <text class="user-name">Hello,tnsihy</text>
+  <!-- 
+    tap 触发条件：手指触摸后马上离开 
+    bind与catch的区别:
+    bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。
+  -->
+  <view class="moto-container" bind:tap="onTap">
+    <text class="moto">开启小程序之旅</text>
+  </view>
+</view>
