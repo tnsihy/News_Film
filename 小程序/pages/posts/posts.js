@@ -31,5 +31,17 @@ Page({
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
     })
+  },
+
+  onSwiperTap:function(event){
+    //target与currentTarget的区别
+    //target指的是当前点击的组件  currentTarget指的是事件捕获的组件
+    //target这里指的是image  currentTarget这里指的是swiper
+    //catch:tap可以阻止事件冒泡
+    var postId = event.target.dataset.postid;
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + postId,
+    })
   }
+
 })

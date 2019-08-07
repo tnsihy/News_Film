@@ -1,0 +1,13 @@
+<!-- 星星等级评分 template模块 -->
+<template name="starsTemplate">
+  <view class="stars-container">
+    <view class="stars">
+      <!-- 因为这里i只有0和1，当为0时为false 为1时为true -->
+      <block wx:for="{{stars}}" wx:for-item="i" wx:key="key">
+        <image wx:if="{{i}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/none-star.png"></image>
+      </block>
+    </view>
+    <text class="star-score">{{score}}</text>
+  </view>
+</template>

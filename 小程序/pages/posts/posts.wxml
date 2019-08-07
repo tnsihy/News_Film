@@ -8,16 +8,16 @@
     可以删掉这段代码或者写成vertical="{{false}}" 
       因为vertical="false"的话"false"看为整体是一个字符串，解析为true
   -->
-  <swiper indicator-dots="true" indicator-color="#fff" indicator-active-color="#b3d4db" autoplay="true" interval="5000">
+  <swiper indicator-dots="true" indicator-color="#fff" indicator-active-color="#b3d4db" autoplay="true" interval="5000" catch:tap="onSwiperTap">
     <swiper-item>
       <!-- src绝对路径 -->
-      <image src="/images/vr.png"></image>
+      <image src="/images/vr.png" data-postId="4"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/iqiyi.png"></image>
+      <image src="/images/iqiyi.png" data-postId="5"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/wx.png"></image>
+      <image src="/images/wx.png" data-postId="3"></image>
     </swiper-item>
   </swiper>
 

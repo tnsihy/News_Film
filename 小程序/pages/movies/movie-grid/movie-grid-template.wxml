@@ -1,0 +1,18 @@
+<import src="../movie/movie-template.wxml" />
+
+<template name="movieGridTemplate">
+  <!-- 实现上滑加载更多数据 -->
+  <view 
+    class="grid-container" 
+    scroll-y="true"
+    scroll-x="false"
+    bindscrolltolower="onScrollLower"
+    bindscrolltoupper="onPullDownRefresh"
+  >
+    <block wx:for="{{movies}}" wx:for-item="movie" wx:key="key">
+      <view class="single-view-container">
+        <template is="movieTemplate" data="{{...movie}}" />
+      </view>
+    </block>
+  </view>
+</template>

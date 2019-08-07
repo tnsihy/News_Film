@@ -1,0 +1,12 @@
+@import "../movie/movie-template.wxss";
+
+.single-view-container{
+  float: left;
+  margin-bottom:40rpx;
+}
+
+.grid-container{
+  margin:40rpx 0 40rpx 6rpx;
+  /* 滑动需要提供一个固定高度 */
+  height:1300rpx;
+}

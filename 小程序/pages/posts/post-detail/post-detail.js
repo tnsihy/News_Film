@@ -79,12 +79,22 @@ Page({
         isPlayingMusic: true
       })
       app.globalData.g_isPlayingMusic = true;
-      app.globalData.g_currentMusicPostId = this.data.currentPostId;
-    })
+      app.globalData.g_currentMusicPostId = that.data.currentPostId;
+    });
+
     // 监听背景音频暂停事件
     wx.onBackgroundAudioPause(function () {
       that.setData({
         isPlayingMusic: false
+      })
+      app.globalData.g_isPlayingMusic = false;
+      app.globalData.g_currentMusicPostId = null;
+    });
+
+    // 监听背景音频播放结束事件
+    wx.onBackgroundAudioStop(function(){
+      that.setData({
+        isPlayingMusic:false
       })
       app.globalData.g_isPlayingMusic = false;
       app.globalData.g_currentMusicPostId = null;

@@ -1,0 +1,57 @@
+<view>
+  <view class="text">switch</view>
+  <!-- type有switch checkbox有效值 -->
+  <switch 
+    checked="true" 
+    type="switch" 
+    color="blue"
+    bindchange="onBindChange"
+  />
+
+  <view class="text">slider</view>
+  <slider 
+    value="100" 
+    show-value="true"
+    min="0"
+    max="500"
+    step="100"
+  ></slider>
+
+  <view class="text">input</view>
+  <input 
+    class="input" 
+    type="text" 
+    placeholder="please input sth."
+  ></input>
+
+  <view class="text">radio</view>
+  <radio-group bindchange="onRadioChange">
+    <label><radio value="Music" checked="true"/>Music</label>
+    <label><radio value="Computer" />Computer</label>
+    <label><radio value="Musium" />Musium</label>
+  </radio-group>
+
+  <view class="text">checkbox</view>
+  <checkbox-group bindchange="onCheckboxChange">
+    <label><checkbox value="Music"/>Music</label>
+    <label><checkbox value="Computer"/>Computer</label>
+    <label><checkbox value="Musium"/>Musium</label>
+  </checkbox-group>
+
+  <view class="text">form表单提交</view>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view>
+      <text>用户名:</text>
+      <input class="input" name="username" type="text"></input>
+    </view>
+    <view>
+      <text>密码:</text>
+      <input class="input" name="password" type="text"></input>
+    </view>
+
+    <view class="text">
+      <button class="button" formType="submit">Submit</button>
+      <button class="button" formType="reset">Reset</button>
+    </view>
+  </form>
+</view>

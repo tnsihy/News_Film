@@ -1,0 +1,19 @@
+.text{
+  margin-top:50rpx;
+}
+
+.input{
+  border:1px solid #ccc;
+  border-radius: 5px;
+  padding: 10rpx 0;
+  width:80%;
+  margin: 0 auto;
+}
+
+.button{
+  width: 50%;
+  background-color: blue;
+  color:#fff;
+  size:mini;
+  margin-bottom:10rpx;
+}

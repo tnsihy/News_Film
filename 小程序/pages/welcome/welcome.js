@@ -6,7 +6,7 @@ Page({
      * wx.redirectTo(Object object) 关闭当前页面，跳转到应用内的某个页面
      * wx.navigateBack(Object object) 关闭当前页面，返回上一页面或多级页面
      */
-    wx.redirectTo({
+    wx.switchTab({
       url: '../posts/posts',
     })
   }
